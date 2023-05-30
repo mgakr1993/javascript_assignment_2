@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Lear year and 12 horary signs</title>
+
+</head>
+
+<!-- Method 1 -->
+
+<body style="background-color: mistyrose;">
+	<div style="width: 400px;height:500px ;margin: 0 auto;padding: 1%;background-color: lightblue;border-radius: 5%;">
+
+		<script>
+		
+
+		var year = prompt("Please Enter Year")
+		year = parseInt(year)
+
+		document.write(`<div  style="width: 300px;margin: 0 auto;background-color: skyblue;"><p style="text-align: center;font-size: xx-large;" >${year}</p></div>`)
+
+
+		// create function for leap year calculation
+		function leapYear(year) {
+
+
+			//----------------------------------------
+			if (year % 4 === 0) {
+
+				//---------------------------------------
+		    	if (year % 100 === 0) {
+
+		    		//----------------------------------------
+		    		if (year % 400 === 0) {
+		        		return "Leap Year";
+		      		} else {
+		        		return "Common Year";
+		      		}
+		      		//-----------------------------------------
+
+		    	}
+			    else {
+			      return "Leap Year";
+			    }
+			    //-----------------------------------------
+
+		  	}
+			else {
+		    	return "Common Year";
+		  	}
+		  	//------------------------------------------
+
+		}
+		
+		var leap = leapYear(year)
+		document.write(`<div style="width: 300px;margin: 0 auto; background-color: skyblue;"><p style="text-align: center; font-size: xx-large;" >${leap}</p></div>`)
+		
+
+		// Set image URLs as a list
+		var signs = ["img/0.jpg","img/1.jpg","img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg","img/6.jpg", "img/7.jpg", "img/8.png", "img/9.jpg", "img/10.jpg", "img/11.jpg"]
+
+		var remainder = year%12
+		var img_url = signs[remainder]
+
+		document.write(`<div style="width: 300px;height: 250px ;margin: 0 auto;"><img src="${img_url}" style="width:100%;height: 100%;border-radius: 2.5%;"></img></div>`)	
+	</script>
+
+	</div>
+
+
+
+	
+</body>
+
+<!--=========================================================================-->
+<!-- Method 2 -->
+
+<!--
+<body style="background-color: mistyrose;">
+	<div style="width: 400px;height:500px ;margin: 0 auto;padding: 1%;background-color: lightblue;border-radius: 5%;">
+
+	<div  style="width: 300px;margin: 0 auto;background-color: skyblue;">
+		<p style="text-align: center;font-size: xx-large;" id="myYear"></p>
+	</div>
+
+	<div style="width: 300px;margin: 0 auto; background-color: skyblue;">
+		<p style="text-align: center; font-size: xx-large;" id="myleap"></p>
+	</div>
+	<div style="width: 300px;height:250px ;margin: 0 auto;">
+		<img id="myImage" src="" style="width:100%;height: 100%;border-radius: 2.5%;"></img>
+	</div>
+
+	</div>
+
+
+	<script>
+		
+
+		var year = prompt("Please Enter Year")
+		year = parseInt(year)
+
+		// Link value of year to <p> Tag
+		var p1 = document.getElementById("myYear")
+		p1.textContent  = year
+
+
+		// create function for leap year calculation
+		function leapYear(year) {
+
+
+			//----------------------------------------
+			if (year % 4 === 0) {
+
+				//---------------------------------------
+		    	if (year % 100 === 0) {
+
+		    		//----------------------------------------
+		    		if (year % 400 === 0) {
+		        		return "Leap Year";
+		      		} else {
+		        		return "Common Year";
+		      		}
+		      		//-----------------------------------------
+
+		    	}
+			    else {
+			      return "Leap Year";
+			    }
+			    //-----------------------------------------
+
+		  	}
+			else {
+		    	return "Common Year";
+		  	}
+		  	//------------------------------------------
+
+		}
+		
+		var leap = leapYear(year)
+		
+		// Link value of year to <p> Tag
+		var p2 = document.getElementById("myleap")
+		p2.textContent = leap
+
+		// Set image URLs as a list
+		var signs = ["img/0.jpg","img/1.jpg","img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg","img/6.jpg", "img/7.jpg", "img/8.png", "img/9.jpg", "img/10.jpg", "img/11.jpg"]
+
+		var remainder = year%12
+		var img_url = signs[remainder]
+
+		// Set img URL using ID selector and link script output to it
+		var imgid = document.getElementById("myImage")
+		imgid.src = img_url;
+		
+	</script>
+	
+</body>
+-->
+
+</html>
